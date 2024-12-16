@@ -123,7 +123,6 @@ A key feature of Skriper is its ability to enhance each assistant with additiona
 In summary, Skriper not only aims to resolve the disorder of conversations but also to enhance each assistant with enriched context, providing users with a more organized and efficient user experience.
 
 
-Here's a light-hearted section you can add to your README:
 
 ---
 
