@@ -1,6 +1,6 @@
 FROM node:20.12 AS build-stage
 
-WORKDIR /app
+WORKDIR /skriper/app
 
 COPY app/package*.json ./
 RUN npm install
@@ -11,9 +11,9 @@ RUN npm run build
 
 FROM node:20.12 AS production-stage
 
-WORKDIR /app
+WORKDIR /skriper/app
 
-COPY --from=build-stage /app /app
+COPY --from=build-stage /skriper/app/ /skriper/app
 
 RUN npm install --only=production
 
@@ -27,7 +27,7 @@ RUN npm install
 COPY server/ .
 
 
-WORKDIR /
+WORKDIR /skriper
 
 COPY ecosystem.config.js .
 
