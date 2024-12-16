@@ -2,6 +2,11 @@ FROM node:20.12 AS build-stage
 
 WORKDIR /skriper/app
 
+ARG API_URL
+ENV API_URL=${API_URL}
+
+RUN echo "API_URL: $API_URL"
+
 COPY app/package*.json ./
 RUN npm install
 
