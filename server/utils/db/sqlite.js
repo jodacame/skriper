@@ -14,13 +14,26 @@ const DB = {
         if (!this.db) {
             await this.init();
         }
+
         return new Promise((resolve, reject) => {
-            this.db.all(sql, params, (err, rows) => {
-                if (err) {
-                    reject(err);
-                }
-                resolve(rows);
-            });
+            if (sql.trim().toUpperCase().startsWith("INSERT")) {
+                this.db.run(sql, params, function (err) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve({ id: this.lastID });
+                    }
+                });
+            } else {
+
+                this.db.all(sql, params, (err, rows) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(rows);
+                    }
+                });
+            }
         });
     },
     /**

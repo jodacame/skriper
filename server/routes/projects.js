@@ -36,10 +36,6 @@ const Projects = {
             },
             project: {
                 id: project.id,
-                name: project.name,
-                description: project.description,
-                created_at: project.created_at,
-                updated_at: project.updated_at,
             }
         })
     },
