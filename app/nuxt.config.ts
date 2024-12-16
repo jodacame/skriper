@@ -1,6 +1,5 @@
 import { version } from './package.json';
-console.log('version:', version);
-console.log('API_URL:', process.env.API_URL);
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
