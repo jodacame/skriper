@@ -37,7 +37,10 @@ const loadModels = async () => {
 };
 const createProject = async () => {
     loading.value = true;
-    await $api.post("/projects", data.value);
+    const response = await $api.post("/projects", data.value);
+    if (response && response.project) {
+        navigateTo(`/projects/${response.project.id}`);
+    }
     emit("updated");
     emit("close");
     loading.value = false;
