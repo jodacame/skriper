@@ -1,8 +1,8 @@
 <template>
     <div class="d-flex justify-center align-center h-100 center-on-mobile">
 
-        <UI-Card max-width="400px" class="pa-6">
-            <UI-Image src="/images/logo-light.png" alt="skriper" width="150px" class="mx-auto mt-2" />
+        <UI-Card max-width="400px" class="pa-6 text-center">
+            <UI-Image src="/logo.png" alt="skriper" width="100px" class="mx-auto mt-2" />
 
             <div class="mt-4 w-100 gap-2 d-flex columns no-wrap">
                 <UI-Input v-model="email" placeholder="Email" :disabled="loading" />
