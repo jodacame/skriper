@@ -46,6 +46,8 @@ docker build --build-arg API_URL=http://localhost:3001 -t skriper .
 ```
 
 #### Create a Docker volume for persistent storage:
+This command creates a Docker volume named ```skriper_data``` that will be used to store the SQLite database and ensure data persistence. 
+Keep in mind that is a example, you need create your own volume whit your own settings.
 
 ```bash
 docker volume create skriper_data
