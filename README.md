@@ -2,6 +2,22 @@
 
 Skriper is a tool similar to ChatGPT that allows the creation of specialized assistants on specific topics and facilitates more organized conversations using modern technologies such as Node.js, Nuxt 3, and SQLite3. The application connects to the OpenAI API to provide advanced conversational assistance capabilities.
 
+## Features
+
+- **Specialized Assistants**: Create assistants tailored to specific topics, enabling more focused and coherent conversations.
+- **Enhanced Context**: Enrich each assistant with additional documentation and files to provide more precise and relevant responses.
+- **OpenAI Integration**: Connect to the OpenAI API to leverage advanced conversational capabilities.
+- **Attachment Support**: Share files and documents with assistants to enhance the conversation.
+
+## Screenshots
+
+Here are a few screenshots of Skriper in action:
+
+| [![Home](/assets/skriper.home.png)](/assets/skriper.home.png) | [![Assistant](/assets/skriper.assistant.png)](/assets/skriper.assistant.png) |
+|-------------------------------------------------------------|-------------------------------------------------------------------|
+| **Home**                                                   | **Assistant**                                                    |
+
+
 ## Requirements
 
 To run Skriper, you'll need to have the following tools installed on your machine:
