@@ -45,6 +45,12 @@ cd skriper
 docker build --build-arg API_URL=http://localhost:3001 -t skriper .
 ```
 
+#### Create a Docker volume for persistent storage:
+
+```bash
+docker volume create skriper_data
+```
+
 #### Run the Docker container with a persistent volume:
 
 ```bash
