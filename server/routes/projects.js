@@ -191,8 +191,6 @@ const Projects = {
                 error: "User not found"
             })
         }
-        const userRecord = userData[0];
-        OpenAI.init(userRecord.openai_api_key);
         res.json(projects);
     },
     async get(req, res, next) {

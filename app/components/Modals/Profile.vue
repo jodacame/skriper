@@ -6,17 +6,6 @@
             <UI-Input v-model="data.email" placeholder="Email" readonly class="col-12" />
             <div class="col-12 cols gap-2">
                 <div class="col-10">
-                    <UI-Input v-model="data.openai_api_key" type="password" placeholder="OpenAPI API Key"
-                        prepend-icon="mdi-key" class="col-12">
-
-                    </UI-Input>
-                </div>
-                <div class="col-2">
-                    <UI-Btn label="Update" block color="primary" @click="updateApiKey" :loading="updating.key" />
-                </div>
-            </div>
-            <div class="col-12 cols gap-2">
-                <div class="col-10">
                     <UI-Input v-model="data.password" type="password" placeholder="Password" prepend-icon="mdi-lock"
                         class="col-12">
 
@@ -44,18 +33,9 @@ const updating = ref({
 });
 const loadUser = async () => {
     loading.value = true;
-    const response = await $api.get("/user/me?fields=email,openai_api_key");
+    const response = await $api.get("/user/me?fields=email");
     data.value = response.user;
     loading.value = false;
-};
-const updateApiKey = async () => {
-    updating.value.key = true;
-    await $api.put("/user/apikey", {
-        openai_api_key: data.value.openai_api_key,
-    });
-    updating.value.key = false;
-    await $user.refresh();
-    openModal.value = null;
 };
 
 const updatePassword = async () => {

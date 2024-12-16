@@ -29,19 +29,6 @@ const USER = {
                     title: "Success"
                 }
             });
-        },
-        async apikey(req, res, next) {
-            const user = req.user;
-            const { openai_api_key } = req.body;
-            await DB.query("UPDATE users SET openai_api_key = ? WHERE id = ?", [openai_api_key, user]);
-            return res.status(200).json({
-                success: true,
-                message: {
-                    type: "success",
-                    text: "API Key updated",
-                    title: "Success"
-                }
-            });
         }
     }
 }

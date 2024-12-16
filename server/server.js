@@ -4,6 +4,7 @@ import express from 'express';
 import DB from './utils/db/sqlite.js';
 import Logger from './utils/logger.js';
 import cors from 'cors';
+import OpenAI from './utils/openai.js';
 
 const app = express();
 app.use(express.json({ limit: '50mb' }));
@@ -41,7 +42,6 @@ app.post('/login', rAuth.login);
 // User
 app.get('/user/me', rUser.get.me);
 app.put('/user/password', rUser.update.password);
-app.put('/user/apikey', rUser.update.apikey);
 
 // Projects
 app.get('/projects', rProjects.all);
@@ -70,5 +70,10 @@ app.use((req, res, next) => {
 
 app.listen(process.env.SERVER_PORT || 3001, async () => {
     await DB.init();
+    if (process.env.OPENAI_API_KEY) {
+        OpenAI.init(process.env.OPENAI_API_KEY);
+    } else {
+        Logger.error('OpenAI API Key is required. Please set OPENAI_API_KEY environment variable');
+    }
     Logger.success(`Server started on port ${process.env.PORT || 3001}`);
 });
