@@ -39,7 +39,7 @@ const createProject = async () => {
     loading.value = true;
     const response = await $api.post("/projects", data.value);
     if (response && response.project) {
-        navigateTo(`/projects/${response.project.id}`);
+        navigateTo(`/project/${response.project.id}`);
     }
     emit("updated");
     emit("close");
