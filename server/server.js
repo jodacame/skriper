@@ -68,7 +68,7 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(process.env.PORT || 3000, async () => {
+app.listen(process.env.SERVER_PORT || 3000, async () => {
     await DB.init();
     Logger.success(`Server started on port ${process.env.PORT || 3000}`);
 });
