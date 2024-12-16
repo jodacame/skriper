@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "@vite-pwa/nuxt": "^0.10.6",
+    "marked": "^15.0.4",
+    "nuxt": "^3.14.1592",
+    "prismjs": "^1.29.0",
+    "toastify-js": "^1.12.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  }
+}
