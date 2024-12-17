@@ -11,7 +11,7 @@ const JWT = {
   create: (data) => {
 
     return jwt.sign(data, process.env.JWT_SECRET, {
-      expiresIn: 60 * 60 * 24 * 365, // 1 year
+      expiresIn: '365d',
     });
   },
 };

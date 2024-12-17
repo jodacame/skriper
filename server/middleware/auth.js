@@ -15,7 +15,7 @@ const AUTH = {
         if (!user) {
             return res.status(401).json({ error: "Unauthorized" })
         }
-        req.user = user
+        req.user = user.id
         next()
     }
 }

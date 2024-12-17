@@ -38,7 +38,7 @@ const Auth = {
                 id: users[0].id,
                 email: users[0].email
             },
-            token: JWT.create(users[0].id)
+            token: JWT.create({ id: users[0].id })
         });
     }
 }
