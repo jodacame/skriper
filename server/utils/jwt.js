@@ -10,7 +10,9 @@ const JWT = {
   },
   create: (data) => {
 
-    return jwt.sign(data, process.env.JWT_SECRET);
+    return jwt.sign(data, process.env.JWT_SECRET, {
+      expiresIn: "365d",
+    });
   },
 };
 
