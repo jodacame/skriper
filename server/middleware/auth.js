@@ -3,7 +3,7 @@ import JWT from '../utils/jwt.js'
 const AUTH = {
     isAuthenticated(req, res, next) {
         // Ignore path /login
-        if (req.path.endsWith('/login')) {
+        if (req.path.endsWith('/login') && req.method === 'POST') {
             return next()
         }
         const headers = req.headers
